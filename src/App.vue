@@ -6,15 +6,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 import HelloWorld from './components/HelloWorld.vue';
+import { MyInterface } from '@/my-interface.ts';
 
 @Component({
   components: {
     HelloWorld,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+    @Prop() public my!: MyInterface;
+}
 </script>
 
 <style lang="scss">
